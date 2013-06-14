@@ -11,15 +11,11 @@
 
 ## User Stories
 * Welcome page with info
-  - *integrate hiccup*
+  - ~~integrate hiccup~~
   - integrate twitter boostrap
   - backend serves up version
   
 ## Tasks
-* *integrate hiccup*
-  - ~~check alternatives~~
-  - ~~get hiccup~~
-  - change hello world to use it
 
 
 ## Misc Thoughts:
