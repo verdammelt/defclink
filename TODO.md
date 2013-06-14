@@ -3,7 +3,7 @@
 
 ## Features
 * Allow user to Clinking with (defclink)
-  - Welcome page with info
+  - *Welcome page with info*
   - Button to show picture & saying
 * Allow user to set preferences for their clinking interactions
 * Allow users to clink with each other
@@ -11,8 +11,15 @@
 
 ## User Stories
 * Welcome page with info
+  - *integrate hiccup*
   - integrate twitter boostrap
   - backend serves up version
+  
+## Tasks
+* *integrate hiccup*
+  - ~~check alternatives~~
+  - ~~get hiccup~~
+  - change hello world to use it
 
 
 ## Misc Thoughts:
