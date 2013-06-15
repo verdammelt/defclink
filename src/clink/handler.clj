@@ -6,8 +6,13 @@
 
 (def welcome-view
   (page/html5 
-   [:head [:title "(defclink)"]] 
-   [:body "Cheers!"] ) )
+   [:head 
+    [:title "(defclink)"]
+    ] 
+   [:body 
+
+    "Cheers!"
+    (page/include-js "jquery/jquery.js")]))
 
 (defroutes app-routes
   (GET "/" [] welcome-view)
