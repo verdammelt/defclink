@@ -16,6 +16,10 @@
   - backend serves up version
   
 ## Tasks
+* integrate twitter boostrap
+  - include jquery
+  - include boostrap
+  - add some obvious bootstrap-y thing to page.
 
 
 ## Misc Thoughts:
