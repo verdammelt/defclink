@@ -12,14 +12,13 @@
 ## User Stories
 * Welcome page with info
   - ~~integrate hiccup~~
-  - integrate twitter boostrap
+  - ~~integrate twitter boostrap~~
+  - toss some text on the page
+  - nav bar with home & about pages
   - backend serves up version
   
+  
 ## Tasks
-* integrate twitter boostrap
-  - ~~include jquery~~
-  - include boostrap
-  - add some obvious bootstrap-y thing to page.
 
 
 ## Misc Thoughts:
