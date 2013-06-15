@@ -17,7 +17,7 @@
   
 ## Tasks
 * integrate twitter boostrap
-  - include jquery
+  - ~~include jquery~~
   - include boostrap
   - add some obvious bootstrap-y thing to page.
 
