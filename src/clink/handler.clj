@@ -20,11 +20,18 @@
 
 (def welcome-view
   (layout "(defclink)" 
+          [:div.navbar
+           [:div.navbar-inner
+            [:a.brand {:href "#"} "(defclink)"]
+            [:ul.nav
+             [:li.active [:a {:href "#"} "Home"]]
+             [:li [:a {:href "#"} "About"]]]]]
           (alert "danger" 
                  [:strong "Warning"] 
-                 " This website is incredibly unfinished")
-          [:div.hero-unit [:p.text-center "Cheers!"]]
-          (alert "success" "It worked!")
+                 " This website is incredibly (dangeously) unfinished")
+          [:div.hero-unit 
+           "Welcome to (defclink) the premiere remote glass-clinking website."
+           ]
           ))
 
 (defroutes app-routes
