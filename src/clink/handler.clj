@@ -37,7 +37,7 @@
            [:p "Have you ever been having a drink and wanted to clink
            glasses but there was no one around?"]
 
-           [:img.img-rounded.offset1 {:src "lonely-drink.jpg" 
+           [:img.img-rounded {:src "lonely-drink.jpg" 
                                       :alt "So sad."}]
 
            [:p]
