@@ -14,9 +14,9 @@
   - ~~integrate hiccup~~
   - ~~integrate twitter boostrap~~
   - ~~toss some text on the page~~
+  - ~~responsive design~~
   - nav bar with home & about pages
   - backend serves up version
-  - responsive design
   
 ## Tasks
 
