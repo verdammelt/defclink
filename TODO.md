@@ -13,12 +13,12 @@
 * Welcome page with info
   - ~~integrate hiccup~~
   - ~~integrate twitter boostrap~~
-  - toss some text on the page
+  - ~~toss some text on the page~~
   - nav bar with home & about pages
   - backend serves up version
+  - responsive design
   
 ## Tasks
-
 
 ## Misc Thoughts:
 * randomized saying

@@ -10,7 +10,7 @@
     [:title title]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
     (page/include-css "bootstrap/css/bootstrap.css")] 
-   [:body body
+   [:body [:div.container body]
     (page/include-js "jquery/jquery.js" "bootstrap/js/bootstrap.js")]))
 
 (defn alert [type & body]
@@ -20,18 +20,31 @@
 
 (def welcome-view
   (layout "(defclink)" 
-          [:div.navbar
-           [:div.navbar-inner
-            [:a.brand {:href "#"} "(defclink)"]
-            [:ul.nav
-             [:li.active [:a {:href "#"} "Home"]]
-             [:li [:a {:href "#"} "About"]]]]]
+
           (alert "danger" 
                  [:strong "Warning"] 
                  " This website is incredibly (dangeously) unfinished")
-          [:div.hero-unit 
-           "Welcome to (defclink) the premiere remote glass-clinking website."
-           ]
+
+          [:div.page-header
+           [:h1 "Welcome to (defclink)" 
+            [:small " the premiere remote glass-clinking website."]]]
+
+          [:div.row.span12
+          [:div 
+           [:p "Have you ever been having a drink and wanted to clink
+           glasses but there was no one around?"]
+
+           [:img.img-rounded.offset1 {:src "lonely-drink.jpg" :alt "So sad."}]
+
+           [:p]
+           [:p "Well " [:code "(defclink)"] " can help you. All you need is a
+           drink and an internet connection."]
+
+           [:p]
+           [:p "Whenever you want a clink you can request one with a
+           simple button press."  ]
+
+           ]]
           ))
 
 (defroutes app-routes
