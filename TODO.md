@@ -4,7 +4,7 @@
 ## Features
 * Allow user to Clinking with (defclink)
   - *Welcome page with info*
-  - Button to show picture & saying
+  - Button to show picture & saying (countdown)
 * Allow user to set preferences for their clinking interactions
 * Allow users to clink with each other
 * Allow mobile users to clink
@@ -16,7 +16,6 @@
   - toss some text on the page
   - nav bar with home & about pages
   - backend serves up version
-  
   
 ## Tasks
 
