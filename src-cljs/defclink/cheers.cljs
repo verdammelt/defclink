@@ -1,4 +1,4 @@
-(ns clink.cheers)
+(ns defclink.cheers)
 
 (def jquery (js* "$"))
 

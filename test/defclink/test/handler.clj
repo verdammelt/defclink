@@ -1,7 +1,7 @@
-(ns clink.test.handler
+(ns defclink.test.handler
   (:use clojure.test
         ring.mock.request  
-        clink.handler))
+        defclink.handler))
 
 (deftest test-app
   (testing "main route"

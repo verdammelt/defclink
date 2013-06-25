@@ -1,4 +1,4 @@
-(ns clink.handler
+(ns defclink.handler
   (:use compojure.core)
   (:require [hiccup.page :as page]
             [hiccup.element :as element])
@@ -36,7 +36,7 @@
     (page/include-js "jquery/jquery.min.js" 
                      "bootstrap/js/bootstrap.min.js"
                      "js/cheers.js")
-    (element/javascript-tag "clink.cheers.cheers()")]))
+    (element/javascript-tag "defclink.cheers.cheers()")]))
 
 (defn alert [type & body]
   [:div {:class (str "alert alert-" type)}
@@ -72,7 +72,7 @@
 (def about-view
   (layout "about"
           [:div.row.span12 "So you want to know about (defdrink) do ya?"]
-          [:div.row.span12 "version: " (System/getProperty "clink.version")]))
+          [:div.row.span12 "version: " (System/getProperty "defclink.version")]))
 
 
 (defroutes app-routes

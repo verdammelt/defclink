@@ -1,5 +1,5 @@
-(ns clink.main
-  (:use [clink.handler :only [app]])
+(ns defclink.main
+  (:use [defclink.handler :only [app]])
   (:use [ring.adapter.jetty :only [run-jetty]]))
 
 (defn -main [port]

@@ -1,4 +1,4 @@
-(defproject clink "0.1.0-SNAPSHOT"
+(defproject defclink "0.1.0-SNAPSHOT"
   :description "Clink glasses virtually"
   :url "http://clink.heroku.com"
   :dependencies [[org.clojure/clojure "1.5.1"]
@@ -18,4 +18,4 @@
                                    :pretty-print true}}]
               }
 
-    :ring {:handler clink.handler/app})
+    :ring {:handler defclink.handler/app})
