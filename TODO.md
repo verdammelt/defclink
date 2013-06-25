@@ -15,10 +15,12 @@
   - ~~integrate twitter boostrap~~
   - ~~toss some text on the page~~
   - ~~responsive design~~
+  - ~~prototype clojurescript~~
   - nav bar with home & about pages
   - backend serves up version
   
 ## Tasks
+* r/d more about heroku trampoline problem - best solution
 
 ## Misc Thoughts:
 * randomized saying
