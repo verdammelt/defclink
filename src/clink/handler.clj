@@ -5,17 +5,34 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]))
 
-(defn layout [title & body]
+(def *title* "(defdrink)")
+(def *views* ["about"])
+
+(defn navbar [title current-view]
+  [:div.navbar.navbar-fixed-top
+   [:div.navbar-inner
+    [:a.brand {:href "/"} *title*]
+    [:ul.nav
+     (map (fn [view]
+            (let [tag (if (= view current-view) :li.active :li) ]
+              [tag [:a {:href (str "/" view)} (clojure.string/capitalize view)]]))
+          *views*)]]])
+
+(defn layout [current-view & body]
   (page/html5 
    [:head 
-    [:title title]
+    [:title "(defclink)"]
     [:meta {:name "viewport" 
             :content "width=device-width, initial-scale=1.0"}]
     [:style "body { padding: 50px }"]
     (page/include-css "bootstrap/css/bootstrap.min.css" 
                       "bootstrap/css/bootstrap-responsive.min.css")
     ] 
-   [:body [:div.container body]
+   [:body 
+    (navbar "(defclink)" current-view)
+
+    [:div.container body]
+
     (page/include-js "jquery/jquery.min.js" 
                      "bootstrap/js/bootstrap.min.js"
                      "js/cheers.js")
@@ -26,23 +43,8 @@
    [:button.close {:type "button" :data-dismiss "alert"} "&times;"]
    body])
 
-(def about-view
-  (layout "(defclink)"
-          [:div.navbar.navbar-fixed-top
-           [:div.navbar-inner
-            [:a.brand {:href "/"} "(defclink)"]
-            [:ul.nav 
-             [:li.active [:a {:href "/about"} "About"]]]]]
-          [:div.row.span12 "So you want to know about (defdrink) do ya?"]))
-
 (def welcome-view
-  (layout "(defclink)" 
-          [:div.navbar.navbar-fixed-top
-           [:div.navbar-inner
-            [:a.brand {:href "/"} "(defclink)"]
-            [:ul.nav 
-             [:li [:a {:href "/about"} "About"]]]]]
-
+  (layout "welcome" 
           (alert "danger" 
                  [:strong "Warning"] 
                  " This website is incredibly (dangeously) unfinished")
@@ -66,6 +68,12 @@
            simple button press."  ]
 
            [:div.cheers "wait for it..."]]))
+
+(def about-view
+  (layout "about"
+          [:div.row.span12 "So you want to know about (defdrink) do ya?"]
+          [:div.row.span12 "version: " (System/getProperty "clink.version")]))
+
 
 (defroutes app-routes
   (GET "/" [] welcome-view)
