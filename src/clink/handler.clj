@@ -1,6 +1,7 @@
 (ns clink.handler
   (:use compojure.core)
-  (:require [hiccup.page :as page])
+  (:require [hiccup.page :as page]
+            [hiccup.element :as element])
   (:require [compojure.handler :as handler]
             [compojure.route :as route]))
 
@@ -15,7 +16,9 @@
     ] 
    [:body [:div.container body]
     (page/include-js "jquery/jquery.min.js" 
-                     "bootstrap/js/bootstrap.min.js")]))
+                     "bootstrap/js/bootstrap.min.js"
+                     "js/cheers.js")
+    (element/javascript-tag "clink.cheers.cheers()")]))
 
 (defn alert [type & body]
   [:div {:class (str "alert alert-" type)}
@@ -47,6 +50,8 @@
            [:p "Whenever you want a clink you can request one with a
            simple button press."  ]
            ]
+
+          [:div.cheers "wrong"]
           
           ))
 
