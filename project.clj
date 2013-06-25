@@ -7,7 +7,7 @@
                  [ring/ring-jetty-adapter "1.1.0"]]
   :min-lein-version "2.0.0"
   :plugins [[lein-ring "0.8.5"]
-            [lein-cljsbuild "0.3.2"]]
+            [ccfontes/lein-cljsbuild "0.3.2-no-exit"]]
   :hooks [leiningen.cljsbuild]
   :profiles {:dev {:dependencies [[ring-mock "0.1.5"]]}}
 

@@ -1,1 +1,1 @@
-web: lein with-profile production run -m clink.main $PORT
+web: lein with-profile production trampoline run -m clink.main $PORT
