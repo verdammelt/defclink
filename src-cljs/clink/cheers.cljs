@@ -5,5 +5,4 @@
 (defn ^:export cheers []
   (jquery (fn []
             (-> (jquery "div.cheers")
-                (.html "Cheers!")
-                (.append "<div>OMG!</div>")))))	
+                (.html "Clojurescript says: Cheers!")))))
