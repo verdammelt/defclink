@@ -9,7 +9,8 @@
   :plugins [[lein-ring "0.8.5"]
             [ccfontes/lein-cljsbuild "0.3.2-no-exit"]]
   :hooks [leiningen.cljsbuild]
-  :profiles {:dev {:dependencies [[ring-mock "0.1.5"]]}}
+  :profiles {:dev {:dependencies [[ring-mock "0.1.5"]
+                                  [midje "1.5.1"]]}}
 
   :cljsbuild {
               :builds [{:source-paths ["src-cljs"]
