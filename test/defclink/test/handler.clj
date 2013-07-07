@@ -26,7 +26,10 @@
     (reverse @tags)))
 
 (defn- get-href-for-anchor [anchor-vec]
-  (filter (complement nil?) (map :href anchor-vec)))
+  (:href (second anchor-vec)))
+
+(defn- get-text-for-anchor [anchor-vec]
+  (nth anchor-vec 2))
 
 (defn- all-anchor-hrefs [html-vec]
   (flatten (map get-href-for-anchor (find-all-tag :a html-vec))))
@@ -35,10 +38,12 @@
   (all-anchor-hrefs (find-all-tag :li.active nav)))
 
 (facts "navbar"
+  (fact "puts the title in the brand link"
+    (first (map get-text-for-anchor
+                (find-all-tag :a.brand 
+                              (navbar "the-title" "welcome" '())))) => "the-title")
   (fact "contains link to main page"
-    (all-anchor-hrefs (navbar "/")) => (contains "/")
-    )
+    (all-anchor-hrefs (navbar "title" "/" '())) => (contains "/"))
   (fact "marks the active view when found"
-    (active-list-items (navbar "about")) => (list "/about")
-    (active-list-items (navbar "other")) => empty?
-    ))
+    (active-list-items (navbar "title" "about" '("about"))) => (list "/about")
+    (active-list-items (navbar "title" "this" '("that"))) => empty?))
