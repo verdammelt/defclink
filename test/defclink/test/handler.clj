@@ -18,8 +18,9 @@
     (clojure.walk/postwalk 
      #(if (and (vector? %)
                (keyword? (first %))
-               (= (name tag)
-                  (first (clojure.string/split (name (first %)) #"\."))))
+               (or (= (first %) tag)
+                   (= (name tag)
+                  (first (clojure.string/split (name (first %)) #"\.")))))
         (swap! tags conj %)
         %) html-vec)
     (reverse @tags)))
@@ -30,7 +31,14 @@
 (defn- all-anchor-hrefs [html-vec]
   (flatten (map get-href-for-anchor (find-all-tag :a html-vec))))
 
+(defn- active-list-items [nav]
+  (all-anchor-hrefs (find-all-tag :li.active nav)))
+
 (facts "navbar"
   (fact "contains link to main page"
     (all-anchor-hrefs (navbar "/")) => (contains "/")
+    )
+  (fact "marks the active view when found"
+    (active-list-items (navbar "about")) => (list "/about")
+    (active-list-items (navbar "other")) => empty?
     ))
