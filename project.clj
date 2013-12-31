@@ -8,7 +8,8 @@
                  [ring/ring-jetty-adapter "1.2.1"]]
   :min-lein-version "2.0.0"
   :plugins [[lein-ring "0.8.8"]
-            [lein-cljsbuild "1.0.1"]]
+            [lein-cljsbuild "1.0.1"]
+            [lein-midje "3.1.3"]]
   :hooks [leiningen.cljsbuild]
   :profiles {:dev {:dependencies [[ring-mock "0.1.5"]
                                   [midje "1.6.0"]]}}
