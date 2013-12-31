@@ -57,6 +57,4 @@
 
   (fact "lets user add scripts to the footer"
     (layout "test" '("body-div") '("footer-scripts")) =>
-    #"body-div.*footer-scripts")
-  ()
-  )
+    #"body-div.*footer-scripts"))
