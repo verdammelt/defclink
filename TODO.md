@@ -3,24 +3,13 @@
 
 ## Features
 * Allow user to Clinking with (defclink)
-  - *Welcome page with info*
+  - ~Welcome page with info~
   - Button to show picture & saying (countdown)
 * Allow user to set preferences for their clinking interactions
 * Allow users to clink with each other
 * Allow mobile users to clink
 
 ## User Stories
-* Welcome page with info
-  - ~~integrate hiccup~~
-  - ~~integrate twitter boostrap~~
-  - ~~toss some text on the page~~
-  - ~~responsive design~~
-  - ~~prototype clojurescript~~
-  - ~~nav bar with home & about pages~~
-  - ~~backend serves up version~~
-  - ~~flesh out about page~~
-  - ~~lock down layout feature with tests~~
-  - layout should allow a list of JS to put at footer
 
 ## Tasks
 

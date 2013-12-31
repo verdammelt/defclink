@@ -50,8 +50,13 @@
 
 (fact "layout"
   (fact "sets up bootstrap properly"
-    (layout "test") => (contains "<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">")
-    (layout "test") => (contains "<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\"><link href=\"bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\" type=\"text/css\">"))
+    (layout "test" '()) => (contains "<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">")
+    (layout "test" '()) => (contains "<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\"><link href=\"bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\" type=\"text/css\">"))
   (fact "sets up jquery properly"
-    (layout "test") => (contains  "<script src=\"jquery/jquery.min.js\" type=\"text/javascript\"></script><script src=\"bootstrap/js/bootstrap.min.js\" type=\"text/javascript\"></script>"))
-)
+    (layout "test" '()) => (contains  "<script src=\"jquery/jquery.min.js\" type=\"text/javascript\"></script><script src=\"bootstrap/js/bootstrap.min.js\" type=\"text/javascript\"></script>"))
+
+  (fact "lets user add scripts to the footer"
+    (layout "test" '("body-div") '("footer-scripts")) =>
+    #"body-div.*footer-scripts")
+  ()
+  )
