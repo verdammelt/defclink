@@ -19,13 +19,13 @@
   - ~~nav bar with home & about pages~~
   - ~~backend serves up version~~
   - ~~flesh out about page~~
-  - lock down layout feature with tests
+  - ~~lock down layout feature with tests~~
   - layout should allow a list of JS to put at footer
 
 ## Tasks
 
 ## Misc Thoughts:
-* Integrate with travis-ci
+* Switch to using Hickory instead of Hiccup
 * randomized saying
 * randomized pictures
 * set prefs for sayings

@@ -85,7 +85,6 @@
            (System/getProperty
             "defclink.version")]))
 
-
 (defroutes app-routes
   (GET "/" [] welcome-view)
   (GET "/about" [] about-view)

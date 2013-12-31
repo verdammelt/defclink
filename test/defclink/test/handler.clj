@@ -1,7 +1,7 @@
 
 (ns defclink.test.handler
   (:use midje.sweet
-        ring.mock.request  
+        ring.mock.request
         defclink.handler))
 
 (defn- get-url [url] (app (request :get url)))
@@ -15,7 +15,7 @@
 
 (defn- find-all-tag [tag html-vec]
   (let [tags (atom '())]
-    (clojure.walk/postwalk 
+    (clojure.walk/postwalk
      #(if (and (vector? %)
                (keyword? (first %))
                (or (= (first %) tag)
@@ -40,10 +40,18 @@
 (facts "navbar"
   (fact "puts the title in the brand link"
     (first (map get-text-for-anchor
-                (find-all-tag :a.brand 
+                (find-all-tag :a.brand
                               (navbar "the-title" "welcome" '())))) => "the-title")
   (fact "contains link to main page"
     (all-anchor-hrefs (navbar "title" "/" '())) => (contains "/"))
   (fact "marks the active view when found"
     (active-list-items (navbar "title" "about" '("about"))) => (list "/about")
     (active-list-items (navbar "title" "this" '("that"))) => empty?))
+
+(fact "layout"
+  (fact "sets up bootstrap properly"
+    (layout "test") => (contains "<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">")
+    (layout "test") => (contains "<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\"><link href=\"bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\" type=\"text/css\">"))
+  (fact "sets up jquery properly"
+    (layout "test") => (contains  "<script src=\"jquery/jquery.min.js\" type=\"text/javascript\"></script><script src=\"bootstrap/js/bootstrap.min.js\" type=\"text/javascript\"></script>"))
+)
