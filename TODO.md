@@ -5,6 +5,7 @@
 * Allow user to Clinking with (defclink)
   - ~Welcome page with info~
   - Button to show picture & saying (countdown)
+* Push to Heroku!
 * Allow user to set preferences for their clinking interactions
 * Allow users to clink with each other
 * Allow mobile users to clink
