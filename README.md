@@ -1,5 +1,7 @@
 # clink
 
+[![Build Status](https://travis-ci.org/verdammelt/defclink.png)](https://travis-ci.org/verdammelt/defclink)
+
 An application to allow one to clink glasses virtually.
 
 ## Prerequisites
